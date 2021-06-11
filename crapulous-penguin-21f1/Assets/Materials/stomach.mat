@@ -26,8 +26,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Floats:
     - Vector1_2FC928BA: 30
-    - Vector1_4860D7EF: 0.1
-    - _SliceAmount: 2
+    - Vector1_4860D7EF: 0.01
+    - _SliceAmount: 1.7446196
     m_Colors:
     - Color_5AD55092: {r: 0, g: 6.990969, b: 1.699462, a: 0}
     - Color_66ED08F4: {r: 1.0787998, g: 3.482202, b: 1.4475036, a: 0}

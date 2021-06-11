@@ -17,7 +17,6 @@ public class selfdestruct : MonoBehaviour
         survivetime-=Time.deltaTime*1;
         if(survivetime<=0){
             Destroy(gameObject,Time.deltaTime);
-            Debug.Log("died");
         }
     }
 }

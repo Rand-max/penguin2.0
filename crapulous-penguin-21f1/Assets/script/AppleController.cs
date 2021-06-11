@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AppleController : MonoBehaviour
 {
+    public playercontroler playercon;
     public GameObject pb;
     public bool alive;
     // Start is called before the first frame update
@@ -17,6 +18,7 @@ public class AppleController : MonoBehaviour
     {
         if (!alive)
         {
+            playercon.Playsound(0);
             Instantiate(pb, this.gameObject.transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
@@ -25,9 +27,25 @@ public class AppleController : MonoBehaviour
     {
         if (other.gameObject.tag=="Penguin")
         {
+            playercon=other.GetComponent<playercontroler>();
+            if(this.tag=="apple"){
+                for(int i=0;i<playercon.thistrails.Length;i++){
+                    playercon.thistrails[i].time+=0.5f;
+                }
+            }else{
+                playercon.speed+=0.04f;
+            }
             alive = false;
         }else if (other.gameObject.tag=="Snake")
         {
+            playercon=other.GetComponent<playercontroler>();
+            if(this.tag=="apple"){
+                for(int i=0;i<playercon.thistrails.Length;i++){
+                    playercon.thistrails[i].time+=0.5f;
+                }
+            }else{
+                playercon.speed+=0.04f;
+            }
             alive = false;
         }
     }
